@@ -11,31 +11,28 @@ public class GivenSum_Triplets {
 		Arrays.sort(arr);
 
 		for (int i = 0; i < n - 1; i++) {
+
 			int x = arr[i];
-			// initialize left and right
-			int l = i + 1;
+
+			int l = i + 1; // i + 1
+
 			int r = n - 1;
+
 			while (l < r) {
 				if (x + arr[l] + arr[r] == sum) {
-					// print elements if its
-					// sum is given sum.
+
 					System.out.println(x + " " + arr[l] + " " + arr[r]);
 					l++;
 					r--;
 				}
 
-				// If sum of three elements
-				// is less than 'sum' then
-				// increment in left
 				else if (x + arr[l] + arr[r] < sum)
 					l++;
 
-				// if sum is greater than
-				// given sum, then decrement
-				// in right side
 				else
 					r--;
 			}
+			System.out.println("-----------------------");
 		}
 	}
 

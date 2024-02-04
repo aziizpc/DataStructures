@@ -8,11 +8,11 @@ public class PrintYourName1000Times {
 		
 		String s = "i";
 		
-		s = s.replaceAll("i", "iiiiiiiiii"); // 10
-		s = s.replaceAll("i", "iiiiiiiiii"); // 100
-		s = s.replaceAll("i", "iiiiiiiiii"); // 1000
+		s = s.replace("i", "iiiiiiiiii"); // 10
+		s = s.replace("i", "iiiiiiiiii"); // 100
+		s = s.replace("i", "iiiiiiiiii"); // 1000
 		
-		s = s.replaceAll("i", "Azeez\n");
+		s = s.replace("i", "Azeez\n");
 		
 		System.out.println(s);
 

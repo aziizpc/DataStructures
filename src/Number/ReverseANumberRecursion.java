@@ -9,7 +9,7 @@ public class ReverseANumberRecursion {
 		if (num < 10) {
 			reverse = reverse * 10 + num;
 			System.out.print(reverse);
-			return reverse;	// Simply
+			return reverse;
 		}
 		else {
 			reverse = reverse * 10 + num % 10;

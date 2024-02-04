@@ -13,7 +13,7 @@ public class SwapTwoStrings {
 		System.out.println("x: " + x);
 		y = x.substring(0, x.length() - y.length()); // y is x now
 		System.out.println("y: " + y);
-		x = x.substring(y.length()); // Note this (last0
+		x = x.substring(y.length()); // Note this (last)
 		System.out.println("x: " + x);
 
 		System.out.println("------------------------------------------");

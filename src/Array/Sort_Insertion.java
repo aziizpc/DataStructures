@@ -1,5 +1,6 @@
-// Code same as insertion of an element in a sorted array
-// Here, we insert elements at its right position one after the other
+// Worst & Avg case --> O(nsquare)
+// Best --> O(n)  (The inner while loop will not be executed.)
+
 package Array;
 
 import java.util.Arrays;
@@ -8,31 +9,24 @@ public class Sort_Insertion {
 
 	public static void main(String[] args) {
 
-		int myArray[] = { 6, 0, -1, 9, 3 };
-		System.out.println("Array before sorting: " + Arrays.toString(myArray));
+		int[] arr = { 56, -9, 23, 23, -1, 900, -45, 0, 67, 33, 100, 0 };
 
-		for (int i = 1; i < myArray.length; i++) {
+		int n = arr.length;
 
-			int temp = myArray[i]; // First vale from unsorted
-			int questionMark = i - 1; // Sorted first (From right)
+		for (int i = 0; i < n; i++) { // Full
 
-			while (questionMark >= 0 && myArray[questionMark] > temp) { // R -> L movement  && 'temp' is lesser
-				myArray[questionMark + 1] = myArray[questionMark]; // Move to right
-				questionMark--; // Decrement (As we are going from R -> L in sorted portion)
+			int j = i;
+
+			while (j > 0 && arr[j] < arr[j - 1]) {
+				int temp = arr[j - 1];
+				arr[j - 1] = arr[j];
+				arr[j] = temp;
+				j--;
 			}
-			myArray[questionMark + 1] = temp; // Save value in place of ?
+
 		}
-		System.out.println("Array after sorting: " + Arrays.toString(myArray));
+
+		System.out.println(Arrays.toString(arr));
+
 	}
 }
-
-/**
- * 0 1 2 3 4 - - - - - 6 0 -1 9 3
- * 
- * 6 | 0 -1 9 3 6 | ? -1 9 3 key = 0 ; ? = 1 ? | 6 -1 9 3 0 6 | -1 9 3
- * 
- * 0 6 | -1 9 3 0 6 | ? 9 3 key = -1 ; ? = 2 0 ? | 6 9 3 ? 0 | 6 9 3 -1 0 6 | 9
- * 3
- * 
- * 
- **/

@@ -28,7 +28,7 @@ public class ReverseTheGivenString {
 
 		StringBuilder sb = new StringBuilder(s); // Method 2
 		sb = sb.reverse();
-		System.out.println("\n" + sb);
+		System.out.println("\n" + sb.toString());
 
 		String finalString = ""; // Method 3
 		for (int i = 0; i < s.length(); i++) {

@@ -1,6 +1,7 @@
 package Misc.Oops;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class TestEmployee {
@@ -45,7 +46,7 @@ public class TestEmployee {
 		System.out.println("----------------------------------------------------------");
 
 		System.out.println("Highest salary");
-		int highestSalary = employeeList.stream().map(e -> e.getSalary()).max(Integer::compare).get();
+		int highestSalary = employeeList.stream().map(e -> e.getSalary()).max(Comparator.comparing(Integer::valueOf)).get();
 		// Integer var = list.stream().max(Integer::compare).get(); // In the case of
 		// normal ArrayList with integers
 		System.out.println(highestSalary);

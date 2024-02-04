@@ -4,7 +4,7 @@ public class StringManipulation {
 
 	public static void main(String[] args) {
 
-		String s = "The rains have started here selenium";
+		String s = "The rains have started here";
 
 		System.out.println("Length of the string: " + s.length()); // Not .size()
 

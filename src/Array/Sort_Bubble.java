@@ -1,10 +1,49 @@
 // O(nsquare) | This is a brute force method
+// Best case --> O(n) // Optimized method
 
 package Array;
 
 public class Sort_Bubble {
 
 	public void bubbleSort(int myArray[]) {
+		if (myArray.length == 0 || myArray.length == 1) {
+			return;
+		}
+
+		for (int i = 0; i < myArray.length - 1; i++) { // myArray.length - 1 ==> We are doing in pairs
+			for (int j = 0; j < myArray.length - 1 - i; j++) { // -i ==> At each iteration, the last element gets its
+																// position
+				// System.out.println(myArray[i] + " , " + myArray[j]);
+				if (myArray[j] > myArray[j + 1]) { // Swap
+					int x = myArray[j + 1];
+					myArray[j + 1] = myArray[j];
+					myArray[j] = x;
+				}
+			}
+		}
+	}
+
+	public void bubbleSortOptimized_ForAlreadySortedArray(int myArray[]) {
+		if (myArray.length == 0 || myArray.length == 1) {
+			return;
+		}
+
+		for (int i = 0; i < myArray.length - 1; i++) {
+			int didSwap = 0;
+			for (int j = 0; j < myArray.length - 1 - i; j++) {	// Logic: If no swapping in the first iteration --> The array is already sorted.
+
+				if (myArray[j] > myArray[j + 1]) {
+					int x = myArray[j + 1];
+					myArray[j + 1] = myArray[j];
+					myArray[j] = x;
+					didSwap = 1;
+				}
+			}
+			if (didSwap == 0) break;
+		}
+	}
+
+	public void bubbleSort_Optimized_AlreadySortedArray(int myArray[]) {
 		if (myArray.length == 0 || myArray.length == 1) {
 			return;
 		}

@@ -9,7 +9,7 @@ public class BinaryOrNot {
 		while (num != 0) {
 			int rem = num % 10;
 			if (rem > 1) {		// NOTE
-				System.out.print(rem);
+				//System.out.print(rem);
 				flag = false;
 				break;
 			} else {

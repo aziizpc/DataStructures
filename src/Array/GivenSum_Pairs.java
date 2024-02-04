@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class GivenSum_Pairs {
 
 	static void pairedElements(int arr[], int n, int sum) {
-		Arrays.sort(arr);
+		Arrays.sort(arr); // Important
 		int l = 0;
 		int r = n - 1;
 
@@ -25,8 +25,8 @@ public class GivenSum_Pairs {
 
 	public static void main(String[] args) {
 		int arr[] = { 2, 3, 4, -2, 6, 8, 9, 11 };
-		int sum = 6;
 		int n = arr.length;
+		int sum = 6;
 		pairedElements(arr, n, sum);
 	}
 }

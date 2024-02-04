@@ -4,7 +4,7 @@ public class CountTotalBitsInANumber {
 
 	public static int countBits(int n) {
 		int count = 0;
-		while (n != 0) {
+		while (n > 0) {
 			System.out.println(n);
 			count++;
 			System.out.println(count + "\n");
@@ -16,7 +16,7 @@ public class CountTotalBitsInANumber {
 
 	/* Driver program */
 	public static void main(String[] arg) {
-		int i = 65;
+		int i = 10;
 		System.out.print("Number of bits: " + countBits(i));
 	}
 

@@ -2,8 +2,11 @@
 
 package String;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Stack;
 
 public class LongestSubStringLengthWithNoRepeatingCharacters {
 
@@ -32,7 +35,7 @@ public class LongestSubStringLengthWithNoRepeatingCharacters {
 			maxLength = Math.max(end - start + 1, maxLength);
 			end++;
 		}
-		System.out.println("\nMax - length: " + maxLength);
+		System.out.println("\nMax - length: " + maxLength);		
 	}
 }
 

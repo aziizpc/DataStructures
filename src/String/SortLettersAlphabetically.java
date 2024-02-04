@@ -8,19 +8,23 @@ public class SortLettersAlphabetically {
 
 		String s = "rdgf kjk lkia ii kyuu han qlkzo";
 
-		// char[] sCharArray = s.toCharArray();
-		String[] sStringArray = s.split(" ");
-
-		char[] sEachArray = null;
-		for (int i = 0; i < sStringArray.length; i++) {
-			String sEach = sStringArray[i];
-			sEachArray = sEach.toCharArray();
-			Arrays.sort(sEachArray);
-			for (char c : sEachArray) {
-				System.out.print(c);
+		String tempString = "";
+		String sortedString = "";
+		String finalString = "";
+		for (int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			if (c != ' ') {
+				tempString = c + tempString;
+				char[] chars = tempString.toCharArray();
+				Arrays.sort(chars);
+				sortedString = new String(chars);	// NOTE !!!
+			} else {
+				finalString = finalString + " " + sortedString;
+				tempString = "";
+				sortedString = "";
 			}
-			System.out.println("");
 		}
 
+		System.out.println(finalString + " " + sortedString);
 	}
 }

@@ -24,7 +24,7 @@ public class ShiftZeroToRight {
 
 	public static void main(String[] args) {
 
-		int a[] = new int[] { 5, 0, 2, 0, 3, 0, 0, 0 }; // O/P: 1 2 3 0 0 0 0 0
+		int a[] = new int[] { 5, 0, 2, 0, 3, 0, 0, 0 }; // O/P: 5 2 3 0 0 0 0 0
 		shiftZeroToRight(a);
 		int c[] = new int[] { 5 };
 		shiftZeroToRight(c);

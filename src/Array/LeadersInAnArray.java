@@ -9,7 +9,7 @@ public class LeadersInAnArray {
 		int[] num = { 92, 8, 7, 12, 0, 9, 72, 5, 8, 3 };
 
 		int count = 0;
-		int sub = 1;
+		int sub = 1;	// 1 as we start from index = 0 (First element)
 
 		System.out.println("Leaders in the array: ");
 		for (int i = 0; i < num.length; i++) {
@@ -17,7 +17,7 @@ public class LeadersInAnArray {
 				if (num[i] > num[j]) {
 					count++;
 				}
-			} // Exists after each iteration
+			} // Exits after each iteration
 			if (count == (num.length - sub)) {
 				System.out.print(num[i] + " ");
 			}

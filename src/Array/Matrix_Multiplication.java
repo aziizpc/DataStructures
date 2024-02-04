@@ -23,7 +23,8 @@ public class Matrix_Multiplication {
 	}
 	
 	public static int[][] productOfMatrices(int rows1, int columns1, int rows2, int columns2, int[][] matrix1, int[][] matrix2){
-		int[][] productMatrix = new int[columns1][rows2];
+		//int[][] productMatrix = new int[columns1][rows2];
+		int[][] productMatrix = new int[rows1][columns2];
 		for (int i = 0; i < rows1; i++) {
             for (int j = 0; j < columns2; j++) {
                 for (int k = 0; k < rows2 || k < columns1; k++)	// Both rows2 & columns1 are same

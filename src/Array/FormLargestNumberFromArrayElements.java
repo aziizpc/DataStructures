@@ -9,10 +9,10 @@ public class FormLargestNumberFromArrayElements {
 
 		int num[] = {1, 2, 3, 0, 4, 6};		
 		
-		Arrays.sort(num);
+		Arrays.sort(num);	// Collections.reverseOrder() NOT possible
 		
 		Integer numInteger[] = {1, 2, 3, 0, 4, 6};
-		Arrays.sort(numInteger, Collections.reverseOrder());  	// Array reversed
+		Arrays.sort(numInteger, Collections.reverseOrder());  	// Array reversed	// NOTE
 		
 		String s = Arrays.toString(num).replaceAll("[^0-9]", "");
 		String ss = Arrays.toString(numInteger).replaceAll("[^0-9]", "");

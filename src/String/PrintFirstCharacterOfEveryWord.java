@@ -4,7 +4,7 @@ public class PrintFirstCharacterOfEveryWord {
 
 	public static void main(String[] args) {
 		String s = "Aarum Pedikkanda Ellavarum Oodikkoo Vegam";
-		char array[] = s.toCharArray(); // Standrad Function
+		char array[] = s.toCharArray(); // Standard Function
 
 		System.out.println(array); // This prints the entire array. Each element is in one array
 														// position.
