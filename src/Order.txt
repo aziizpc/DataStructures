@@ -1,0 +1,27 @@
+1. Fundamental Building Blocks:
+-------------------------------
+Arrays: Understand initialization, access, traversal, searching, and sorting.
+Linked Lists: Grasp the concepts of singly and doubly linked lists, and their operations.
+
+2. Essential Data Structures:
+-----------------------------
+Stacks and Queues: Implement them using arrays or linked lists and understand their applications.
+Recursion: Master writing recursive functions and understand base cases and stack overflow.
+
+3. Core Data Structures:
+------------------------
+Binary Search: Learn this efficient search algorithm that works on sorted arrays and halves the search space with each iteration.
+Trees: Understand different tree types (binary trees, n-ary trees), basic operations, and applications.
+
+4. Advanced Data Structures (Build upon previous knowledge):
+------------------------------------------------------------
+Graphs: Build upon your knowledge of trees and understand graph concepts (adjacency lists/matrices, traversal algorithms), and applications.
+Tries: Understand trie operations (insertion, searching) and their applications.
+
+5. Specialized Data Structure:
+------------------------------
+Strings: Learn basic string manipulation methods, formatting, and regular expressions for pattern matching.
+
+6. Algorithmic Paradigm:
+------------------------
+Dynamic Programming: Understand the concept of overlapping subproblems and memoization to solve problems like Fibonacci sequence, longest common subsequence, etc.

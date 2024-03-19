@@ -21,7 +21,7 @@ public class ARR_25_SpiralTraversalOfMatrix {
 			}
 			right--;
 
-			if (top <= bottom) { // This is optional (To cover for single row matrix scenario)
+			if (top <= bottom) { // This if (ONLY) is optional (To cover for single row matrix scenario)
 				for (int i = right; i >= left; i--) {
 					System.out.print(arr[bottom][i] + " ");
 				}
@@ -49,3 +49,14 @@ public class ARR_25_SpiralTraversalOfMatrix {
 	}
 
 }
+
+/*
+
+{ 1, 2, 3, 4, 5 }
+{ 6, 7, 8, 9, 0 }
+{ 11, 12, 13, 14, 15 }
+{ 16, 17, 18, 19, 20 }
+{ 21, 22, 23, 24, 25 }
+{ 26, 27, 28, 29, 30 }
+
+*/
