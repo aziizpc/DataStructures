@@ -41,6 +41,18 @@ public class LL_13_AddTwoNumbersInLinkedList {
 			
 			carry = sum / 10;
 			
+			/* Better way:
+			 * 
+			 * 		if (sum > 9) {
+                		carry = 1;
+                		sum = sum % 10;
+            		}
+            		else {
+                		carry = 0;
+            		}
+			 * 
+			 */
+			
 			current.next = nextSumNode;
 			
 			current = nextSumNode;

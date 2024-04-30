@@ -15,10 +15,25 @@ public class LL_12_RevserseTheLL {
 		return head;
 	}
 	
+	static Node reverseTheLLRecursion(Node head) {
+		if (head == null || head.next == null) return head;	// Base condition: No element OR One element
+		
+		Node newHead = reverseTheLLRecursion(head.next);	// Call the function recursively to get the newHead
+															// newHead will be same throughout
+															// What we are doing here is head.next @ each recursive call
+															// Thereby head navigating forward in each call
+		
+		Node front = head.next;								// Basic (Save front)
+		front.next = head;									// Reversing
+		head.next = null;									// Obvious
+		
+		return newHead;
+	}
+	
 	static Node reverseTheLL(Node head) {
 		
 		Node newHead = null;					// Assign the newHead as null (Important)
-												// Assumption and valid
+												// Assumption and valid also
 		
 		Node current = head;					// Just like 'temp'
 		
@@ -43,9 +58,9 @@ public class LL_12_RevserseTheLL {
 
 	public static void main(String[] args) {
 
-		int[] arr = { 2, 5, 6, 8 };
+		int[] arr1 = { 2, 5, 6, 8 };
 		
-		Node head = convertArrayToLL(arr);
+		Node head = convertArrayToLL(arr1);
 		
 		head = reverseTheLL(head);
 		
@@ -55,6 +70,21 @@ public class LL_12_RevserseTheLL {
 			System.out.print(temp.data + " -> ");
 			temp = temp.next;
 		}
+		
+		System.out.println("\n----------------------------------------");
+		
+		int[] arr2 = { 2, 5, 6, 8 };
+		
+		head = convertArrayToLL(arr2);
+		
+		head = reverseTheLLRecursion(head);
+		
+		temp = head;
+		
+		while (temp != null) {
+			System.out.print(temp.data + " -> ");
+			temp = temp.next;
+		}	
 
 	}
 

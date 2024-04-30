@@ -1,26 +1,26 @@
-package Striver_Recursion;
+package Striver_Array;
 
 import java.util.Arrays;
 
-public class FindTheMissingAndRepeatingNumber_31 { // Find the missing and repeating number and return {m,r}
-
+public class ARR_39_FindTheMissingAndRepeatingNumber {
+	
 	public static int[] getMissingAndRepeatingUsingMath(int[] arr) {
 
 		int n = arr.length;
 
 		int sumOfFirstNNumbers = ((n * (n + 1)) / 2);
 
-		int sumOfSquaresOfFirstNNumbers = ((n * (n + 1) * ((2 * n) + 1)) / 6);
+		int sumOfSquaresOfFirstNNumbers = ((n * (n + 1) * ((2 * n) + 1)) / 6); // (n * (n + 1) * (2n + 1)) / 6
 
-		int giveIntegersSum = 0;
+		int givenIntegersSum = 0;
 		int givenIntegersSquareSum = 0;
 
 		for (int i : arr) {
-			giveIntegersSum += i;
+			givenIntegersSum += i;
 			givenIntegersSquareSum += (i * i);
 		}
 
-		int sumDiff = sumOfFirstNNumbers - giveIntegersSum; // x - y = some number
+		int sumDiff = sumOfFirstNNumbers - givenIntegersSum; // x - y = some number
 
 		int squareDiff = sumOfSquaresOfFirstNNumbers - givenIntegersSquareSum; // x sqr - y sqr = some other
 
@@ -49,16 +49,20 @@ public class FindTheMissingAndRepeatingNumber_31 { // Find the missing and repea
 			xor ^= arr[i - 1];
 			xor ^= i;
 		}
+		
+		// System.out.println(xor); --> 4
 
 		int bitPosition = 0;
 
-		while (true) { // Find the position in xor where bit is 1 (Important)
+		while (true) { // Find the position in XOR where bit is 1 (Important)
 			if ((xor & (1 << bitPosition)) != 0) { // & --> Gives 1 only if both are 1.
 				break;
 			} else {
 				bitPosition++;
 			}
 		}
+		
+		// System.out.println(bitPosition); --> 2
 
 		int zeroTeam = 0;
 
