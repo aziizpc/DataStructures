@@ -45,16 +45,21 @@ public class ARR_39_FindTheMissingAndRepeatingNumber {
 
 		int xor = 0;
 
-		for (int i = 1; i <= n; i++) { // xor all the arr elements. Also, with numbers 1 to n.
-			xor ^= arr[i - 1];
-			xor ^= i;
+		/* Two tasks in the for loop
+		 * 1. XOR each element with the array element
+		 * 2. XOR with each numbers from 1 to n
+		 */
+		for (int i = 1; i <= n; i++) { 	// for loop starts from 1 as we want xor with number 1 to n (See third)
+			xor ^= arr[i - 1];			// 'xor' all the arr elements.
+			xor ^= i;					// Same 'xor' with numbers 1 to n.
 		}
 		
 		// System.out.println(xor); --> 4
 
 		int bitPosition = 0;
 
-		while (true) { // Find the position in XOR where bit is 1 (Important)
+		// Find the position in XOR where bit is 1:
+		while (true) {
 			if ((xor & (1 << bitPosition)) != 0) { // & --> Gives 1 only if both are 1.
 				break;
 			} else {
@@ -65,10 +70,13 @@ public class ARR_39_FindTheMissingAndRepeatingNumber {
 		// System.out.println(bitPosition); --> 2
 
 		int zeroTeam = 0;
-
 		int oneTeam = 0;
 
-		for (int i = 0; i < n; i++) { // On the array
+		/* From the array, find the elements which have 1 @ 'bitPosition'.
+		 * If it's 1 => XOR that number with oneTeam
+		 * Else XOR with zeroTeam
+		 */
+		for (int i = 0; i < n; i++) {
 			if ((arr[i] & (1 << bitPosition)) != 0) {
 				oneTeam ^= arr[i];
 			} else {
@@ -76,7 +84,11 @@ public class ARR_39_FindTheMissingAndRepeatingNumber {
 			}
 		}
 
-		for (int i = 1; i <= n; i++) { // On the numbers
+		/* From the numbers 1 to n, find the elements which have 1 @ 'bitPosition'.
+		 * If it's 1 => XOR that number with oneTeam
+		 * Else XOR with zeroTeam
+		 */
+		for (int i = 1; i <= n; i++) {
 			if ((i & (1 << bitPosition)) != 0) {
 				oneTeam ^= i;
 			} else {
@@ -88,12 +100,22 @@ public class ARR_39_FindTheMissingAndRepeatingNumber {
 		int missingNumber = -1;
 		int repeatedNumber = -1;
 
-		for (int i = 0; i < n; i++) { // Let's find out
+		/* For loop from number 1 to n.
+		 * IF THE ARRAY ELEMENT IS ZEROTEAM, INCREASE THE 'count'
+		 */
+		for (int i = 0; i < n; i++) {
 			if (arr[i] == zeroTeam) {
 				count++;
 			}
 		}
 
+		/* COUNT = 2 =>
+		 *   repeat: zero
+		 *   missing: one
+		 * COUNT = everything else =>
+		 *   repeat: one
+		 *   missing: zero
+		 */
 		if (count == 2) {
 			repeatedNumber = zeroTeam;
 			missingNumber = oneTeam;

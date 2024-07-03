@@ -44,8 +44,8 @@ public class ARR_15_2_MajorityElement {
 
 		}
 
-		System.out.println(count1 + " -- " + elem1);
-		System.out.println(count2 + " -- " + elem2);
+		System.out.println(count1 + " times --> " + elem1);
+		System.out.println(count2 + " times --> " + elem2);
 
 		int min = (int) (arr.length / 3) + 1;
 		System.out.println("min: " + min);

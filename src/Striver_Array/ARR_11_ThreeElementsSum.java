@@ -12,9 +12,9 @@ public class ARR_11_ThreeElementsSum {
 
 		List<List<Integer>> ans = new ArrayList<List<Integer>>();
 
-		for (int i = 0; i <= arr.length - 3; i++) {	// NOTE
+		for (int i = 0; i <= arr.length - 3; i++) {		// NOTE
 
-			if (i > 0 && arr[i] == arr[i - 1]) // Ignoring the duplicate elements
+			if (i > 0 && arr[i] == arr[i - 1]) 			// Ignoring the duplicate elements @ 1st positions
 				continue;
 
 			int left = i + 1;
@@ -28,23 +28,23 @@ public class ARR_11_ThreeElementsSum {
 					temp.add(arr[left]);
 					temp.add(arr[right]);
 					ans.add(new ArrayList<Integer>(temp));
-					left++; // Increment once and then while loop
-					right--; // Dec first and then while loop
-					while (arr[left] == arr[left - 1])
+					left++; 							// Increment once and then while loop
+					right--; 							// Decrement first and then while loop
+					while (arr[left] == arr[left - 1])	// Ignoring the duplicate elements @ 2nd positions
 						left++;
-					while (arr[right] == arr[right + 1])
+					while (arr[right] == arr[right + 1])// Ignoring the duplicate elements @ 3rd positions
 						right--;
 				}
 
 				else if (arr[i] + arr[left] + arr[right] < target) {
 					left++;
-					while (arr[left] == arr[left - 1])
+					while (arr[left] == arr[left - 1])	// Ignoring the duplicate elements @ 2nd positions
 						left++;
 				}
 
 				else {
 					right--;
-					while (arr[right] == arr[right + 1])
+					while (arr[right] == arr[right + 1])// Ignoring the duplicate elements @ 3rd positions
 						right--;
 				}
 			}

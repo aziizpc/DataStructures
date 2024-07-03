@@ -7,15 +7,15 @@ import java.util.List;
 public class ARR_16_AllSubsets {
 
 	static void getSubArrays(int[] arr, int start, int end, List<List<Integer>> ans) {
-		// Stop if we have reached the end of the array
+		// Stop if we have reached the end of the array:
 		if (end == arr.length)
 			return;
 
-		// Increment the end point and start from 0
+		// Increment the end point and start from 0:
 		else if (start > end)
 			getSubArrays(arr, 0, end + 1, ans);
 
-		// Print the sub-array and increment the starting point
+		// Print the sub-array and increment the starting point:
 		else {
 			List<Integer> temp = new ArrayList<Integer>();
 			for (int i = start; i <= end; i++) {

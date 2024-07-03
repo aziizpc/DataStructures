@@ -13,19 +13,19 @@ public class ARR_18_MaximumSumSubArray {
 		int max = Integer.MIN_VALUE;
 		int sum = 0;
 
-		int ansStart = -1;
+		int ansStart = -1;			// Two additional variables here
 		int ansEnd = -1;
 
 		for (int i = 0; i < arr.length; i++) {
 
 			if (sum == 0)
-				ansStart = i; // start will be where the sum = 0 (Think)
+				ansStart = i; 		// start will be where the sum = 0 (Think)
 
 			sum += arr[i];
 
 			if (sum > max) {
 				max = sum;
-				ansEnd = i;	// This is where 'end' would be at
+				ansEnd = i;			// This is where 'end' would be at
 			}
 
 			if (sum < 0)

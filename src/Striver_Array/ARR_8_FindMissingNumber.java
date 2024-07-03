@@ -11,9 +11,22 @@ public class ARR_8_FindMissingNumber {
 			xor2 = xor2 ^ (i + 1);
 		}
 
-		xor2 = xor2 ^ n;
+		xor2 = xor2 ^ n;					// To account for the lesser array size due to the missing number
 
 		return xor1 ^ xor2;
+	}
+	
+	public static int getMissing_2(int[] arr, int n) {
+		int xor = 0;
+
+		for (int i = 0; i < arr.length; i++) {
+			xor = xor ^ arr[i];
+			xor = xor ^ (i + 1);
+		}
+
+		xor = xor ^ n;						// To account for the lesser array size due to the missing number
+
+		return xor;
 	}
 
 	public static void main(String[] args) {
@@ -23,6 +36,8 @@ public class ARR_8_FindMissingNumber {
 		int n = 8;
 
 		System.out.println(getMissing(arr, n));
+		
+		System.out.println(getMissing_2(arr, n));
 
 	}
 

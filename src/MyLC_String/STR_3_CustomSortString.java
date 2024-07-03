@@ -37,11 +37,11 @@ public class STR_3_CustomSortString {
 				}
 				char key = hm1.get(ind);
 				int val = hm2.get(key);
-				arr[i] = key;	// Replace
+				arr[i] = key;		// Replace
 				val--;
 				hm2.put(key, val);	// Update the decremented count
 				if (val == 0)
-					ind++;		// Increment ind
+					ind++;			// Increment ind
 			}
 		}
 

@@ -9,33 +9,35 @@ import java.util.List;
 public class ARR_6_UnionOfTwoSortedArrays {
 
 	public static int[] getUnion(int[] arr1, int[] arr2) {
-		int i = 0;
+		int i = 0;										// Initialize TWO POINTS
 		int j = 0;
 
 		List<Integer> myList = new ArrayList<Integer>();
 
-		if (arr1[0] <= arr2[0]) {
-			myList.add(arr1[0]);
+		if (arr1[0] <= arr2[0]) {						// Add the 'first' element to the list so that we have
+			myList.add(arr1[0]);						// something in the list for comparison
 			i++;
 		} else {
 			myList.add(arr2[0]);
 			j++;
 		}
 
-		while (i < arr1.length && j < arr2.length) {
+		while (i < arr1.length && j < arr2.length) {	// Add whichever is smaller by checking last element
 			if (arr1[i] <= arr2[j] && myList.get(myList.size() - 1) != arr1[i]) {
 				myList.add(arr1[i]);
 				i++;
 			} else if (arr2[j] < arr1[i] && myList.get(myList.size() - 1) != arr2[j]) {
 				myList.add(arr2[j]);
 				j++;
-			} else {
+			} else {									// Both are same => Just increment
 				i++;
 				j++;
 			}
 		}
 
-		while (i < arr1.length) {
+		// Only either of the two following will be executed. THINK!
+		
+		while (i < arr1.length) {						// Add pending elements in arr1 to list
 			if (myList.get(myList.size() - 1) != arr1[i]) {
 				myList.add(arr1[i]);
 				i++;
@@ -43,7 +45,7 @@ public class ARR_6_UnionOfTwoSortedArrays {
 				i++;
 		}
 
-		while (j < arr2.length) {
+		while (j < arr2.length) {						// Add pending elements in arr2 to list
 			if (myList.get(myList.size() - 1) != arr2[j]) {
 				myList.add(arr2[j]);
 				j++;
@@ -51,7 +53,7 @@ public class ARR_6_UnionOfTwoSortedArrays {
 				j++;
 		}
 
-		return myList.stream().mapToInt(e -> e).toArray();
+		return myList.stream().mapToInt(e -> e).toArray();	// Convert to array
 	}
 
 	public static void main(String[] args) {

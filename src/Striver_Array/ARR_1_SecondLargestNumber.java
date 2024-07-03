@@ -12,11 +12,11 @@ public class ARR_1_SecondLargestNumber {
 		int secondLargest = Integer.MIN_VALUE;
 
 		for (int i = 1; i < arr.length; i++) {
-			if (arr[i] > largest) {
+			if (arr[i] > largest) {				// Case: Larger value than 'largest' comes
 				secondLargest = largest;
 				largest = arr[i];
-			} else if (arr[i] < largest && arr[i] > secondLargest) { // If secondLargest comes after largest
-				secondLargest = arr[i];
+			} else if (arr[i] < largest && arr[i] > secondLargest) { // Case: Smaller value than 'largest' ..
+				secondLargest = arr[i];								 // and larger than 'secondLargest' seen
 			}
 		}
 
