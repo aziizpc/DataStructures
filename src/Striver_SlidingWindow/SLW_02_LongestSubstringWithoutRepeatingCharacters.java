@@ -16,6 +16,7 @@ public class SLW_02_LongestSubstringWithoutRepeatingCharacters {
 
         while (r < n){
             char c = s.charAt(r);
+            
             if ((hm.containsKey(c)) && (hm.get(c) >= l)){	// If the key has already appeared before & if it's
             												// within the current l (left) and r (right).
                 l = hm.get(c) + 1;							// Update the l (left) to the index next to the one
@@ -33,6 +34,15 @@ public class SLW_02_LongestSubstringWithoutRepeatingCharacters {
 	public static void main(String[] args) {
 		
 		String s = "abcabcbb";		
+		System.out.println(lengthOfLongestSubstring(s));
+		
+		s = "fffftttrrrssss";		
+		System.out.println(lengthOfLongestSubstring(s));
+		
+		s = "wwwww";		
+		System.out.println(lengthOfLongestSubstring(s));
+		
+		s = "abdeb";		
 		System.out.println(lengthOfLongestSubstring(s));
 
 	}

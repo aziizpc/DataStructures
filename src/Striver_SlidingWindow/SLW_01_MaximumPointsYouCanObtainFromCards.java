@@ -2,7 +2,7 @@
 
 package Striver_SlidingWindow;
 
-public class SLW_01_MaximumPointsYouCanObtainFromCards {
+public class SLW_01_MaximumPointsYouCanObtainFromCards {	// Max around edge problem
 	
 	public static int maxScore(int[] cardPoints, int k) {
 
@@ -14,12 +14,12 @@ public class SLW_01_MaximumPointsYouCanObtainFromCards {
             leftSum += cardPoints[i];
         }
 
-        maxSum = Math.max(maxSum, leftSum);				// leftSum itself will be maxSum now. Think!
+        maxSum = leftSum;								// leftSum itself will be maxSum now. Think!
 
         int rightIndex = (n - 1);						// Variable for the right last index
-        for (int i = k ; i > 0 ; i--){					// For loop from kth index backwards
-            leftSum -= cardPoints[i - 1];				// Decrement the ith value from left
-            rightSum += cardPoints[rightIndex];			// Increment the rightIndex'th value from right
+        for (int i = k - 1 ; i >= 0 ; i--){				// For loop from kth index backwards
+            leftSum -= cardPoints[i];					// Decrement the ith value from LEFTSUM
+            rightSum += cardPoints[rightIndex];			// Increment the RIGHTSUM by rightIndex'th value
             rightIndex--;								// This has to be decremented
             int sum = leftSum + rightSum;				// The new sum
             maxSum = Math.max(maxSum, sum);				// Find which is the maximum

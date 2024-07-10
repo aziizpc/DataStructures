@@ -14,7 +14,6 @@ public class SLW_05_LongestSubstringWithAtMostKDistinctCharacters {
 		StringBuilder ans = new StringBuilder();
 		
 		for (r = 0 ; r < n ; r++) {
-			//System.out.println(hm);
 			char c = s.charAt(r);
 			
 			while (hm.size() == k && (l < r) && (!hm.containsKey(c))) {
@@ -39,7 +38,7 @@ public class SLW_05_LongestSubstringWithAtMostKDistinctCharacters {
 		int k = 2;		
 		System.out.println(getSubstring(s, k));
 		
-		s = "aabbccccccccccdeefffffffggggg";
+		s = "aabbcccffffcccccdeefffccccffffggggg";
 		k = 3;		
 		System.out.println(getSubstring(s, k));
 
