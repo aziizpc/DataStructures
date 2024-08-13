@@ -22,15 +22,15 @@ public class STR_15_LongestPalindrome {
 
 		for (int i = 0; i < alpha.length; i++) {
 			if (alpha[i] != 0 && alpha[i] % 2 == 0)
-				ans += alpha[i];	// If eve, we take as it is
+				ans += alpha[i];		// If even, we take as it is
 			else if (alpha[i] != 0 && alpha[i] % 2 != 0) {
 				ans += alpha[i] - 1;	// If odd, we are taking only the next lowest even number
 				if (odd == 0)
-					odd = 1;	// Only one odd allowed
+					odd = 1;			// Only one odd allowed
 			}
 		}
 
-		return ans + odd;	// We need only one odd if it's there (THINK!!)
+		return ans + odd;				// We need only one odd if it's there (THINK!!)
 
 	}
 

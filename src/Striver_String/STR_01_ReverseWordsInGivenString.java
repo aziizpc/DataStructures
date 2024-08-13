@@ -1,6 +1,6 @@
-package String;
+package Striver_String;
 
-public class ReverseWordsInGivenString {
+public class STR_01_ReverseWordsInGivenString {
 
 	public static void main(String[] args) {
 

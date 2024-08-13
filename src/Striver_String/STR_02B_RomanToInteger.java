@@ -1,9 +1,9 @@
-package MyLC_Arrays;
+package Striver_String;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class AML_6_RomanToInteger {
+public class STR_02B_RomanToInteger {
 
 	public static void main(String[] args) {
 

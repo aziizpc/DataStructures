@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class FrequencyBasedSort {
+public class PQ_02_FrequencyBasedSortChar {
 
 	public static void main(String[] args) {
 

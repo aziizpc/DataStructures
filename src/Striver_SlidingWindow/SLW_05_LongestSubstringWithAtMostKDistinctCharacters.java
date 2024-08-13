@@ -1,3 +1,5 @@
+// LC locked
+
 package Striver_SlidingWindow;
 
 import java.util.HashMap;
@@ -6,6 +8,10 @@ import java.util.Map;
 public class SLW_05_LongestSubstringWithAtMostKDistinctCharacters {
 	
 	public static String getSubstring(String s, int k) {
+		
+		/*
+		 * PRECONDITION: MAX DISTINCT CHARACTERS (KEY) POSSIBLE = k
+		 */
 		
 		int n = s.length();
 		int l = 0, r;
@@ -16,7 +22,7 @@ public class SLW_05_LongestSubstringWithAtMostKDistinctCharacters {
 		for (r = 0 ; r < n ; r++) {
 			char c = s.charAt(r);
 			
-			while (hm.size() == k && (l < r) && (!hm.containsKey(c))) {
+			while (hm.size() == k && (!hm.containsKey(c)) && (l < r)) {
 				hm.put(s.charAt(l), hm.getOrDefault(s.charAt(l), 0) - 1);
 				temp.deleteCharAt(0);
 				if (hm.get(s.charAt(l)) == 0) hm.remove(s.charAt(l));

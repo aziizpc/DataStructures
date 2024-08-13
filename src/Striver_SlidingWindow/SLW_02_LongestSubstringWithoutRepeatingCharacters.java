@@ -22,8 +22,8 @@ public class SLW_02_LongestSubstringWithoutRepeatingCharacters {
                 l = hm.get(c) + 1;							// Update the l (left) to the index next to the one
             }												// in HM (existing) so that duplicate is discarded
             
-	        maxLen = Math.max(maxLen, r - l + 1);			// Equation for length. Find the max of it.
             hm.put(c, r);									// Put OR Update the HM with latest char & index
+            maxLen = Math.max(maxLen, r - l + 1);			// Equation for length. Find the max of it.
             r++;											// Move forward!
         }
 

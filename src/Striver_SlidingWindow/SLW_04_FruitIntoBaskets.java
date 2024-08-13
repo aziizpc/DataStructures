@@ -10,7 +10,11 @@ public class SLW_04_FruitIntoBaskets {
 	public static int totalFruit(int[] fruits) {
 		
 		/* 
-		 * 100% Self solved with Striver input :)
+		 * 100% self solved with Striver input :)
+		 */
+		
+		/*
+		 * PRECONDITION: MAX TYPE (KEY) POSSIBLE = 2
 		 */
 
         int n = fruits.length;										

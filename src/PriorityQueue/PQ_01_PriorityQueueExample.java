@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class PriorityQueueExample {
+public class PQ_01_PriorityQueueExample {
 
 	public static void main(String[] args) {
 		// Define a custom comparator to sort in descending order

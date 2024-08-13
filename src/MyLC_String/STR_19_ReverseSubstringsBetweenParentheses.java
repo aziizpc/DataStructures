@@ -18,14 +18,16 @@ public class STR_19_ReverseSubstringsBetweenParentheses {
 			char c = s.charAt(i);
 			
 			if (c == '(') {										// if c == '('
-				st.push(sb.length());							// PUSH the sb length
+				st.push(sb.length());							// PUSH the sb length (NOT I)
+																// Why? -> This will not cause '(' and ')' add to
+																// indices
 			}
 			
 			else if (c == ')') {								// If c == ')'
 				int start = st.pop();							// Get the start from STACK
 				int end = sb.length() - 1;						// Get the end as sb.length() - 1 (Last char) 
 				
-				while (start < end) {							// while (start < end): 
+				while (start < end) {							// while (start < end): swap operation
 					char ch = sb.charAt(start);					// Save char @ start
 					sb.setCharAt(start++, sb.charAt(end));		// Set char @ start as that in end. Do start++.
 					sb.setCharAt(end--, ch);					// Set char @ end to the one we saved. Do end--.
@@ -35,6 +37,10 @@ public class STR_19_ReverseSubstringsBetweenParentheses {
 			else {												// For all others
 				sb.append(c);									// Just append to sb
 			}
+			
+//			System.out.println("stack: " + st);
+//			System.out.println("string: " + sb.toString());
+//			System.out.println("----------------------------");
 			
 		}
 		

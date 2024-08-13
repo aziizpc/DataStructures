@@ -2,7 +2,7 @@ package Striver_String;
 
 import java.util.Arrays;
 
-public class STR_1_LongestCommonPrefix {
+public class STR_05_LongestCommonPrefix {
 	
 	static String longestCommonPrefix(String[] strs) {
 
