@@ -3,7 +3,7 @@
 
 package MyLC_Sahil;
 
-public class SL_TrappingRainWater {
+public class SL_01_TrappingRainWater {
 	
 	public static int trap(int[] height) {
 		
