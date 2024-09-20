@@ -5,6 +5,13 @@ package Striver_String;
 
 public class STR_08_LongestHappyPrefix {
 	
+	/* Input: s = "level"
+	 * Output: "l"
+	 * Explanation: s contains 4 prefix excluding itself ("l", "le", "lev", "leve"), 
+	 * and suffix ("l", "el", "vel", "evel"). 
+	 * The largest prefix which is also suffix is given by "l".	 * 
+	 */
+	
 	/*	Input: s = "level"
 
 		0 10 210 3210 43210

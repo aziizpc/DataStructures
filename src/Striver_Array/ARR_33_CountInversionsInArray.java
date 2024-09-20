@@ -5,7 +5,7 @@ package Striver_Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ARR_32_CountInversionsInArray {
+public class ARR_33_CountInversionsInArray {
 
 	public static int splitTheArray(int[] arr, int low, int high) {
 

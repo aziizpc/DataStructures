@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ARR_35_LongestSubArrayWithSumK {
+public class ARR_36_LongestSubArrayWithSumK {
 
 	public static int[] getLongestSubarray(int[] a, int k) {
 		int n = a.length; // size of the array.

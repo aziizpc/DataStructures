@@ -23,10 +23,10 @@ public class ARR_9_MaximumConsecutiveOnes {
 
 	public static void main(String[] args) {
 		
-		int[] arr = { 1, 1, 0, 1, 1, 1, 0, 1, 1 }; // OP: 3
+		int[] arr = { 1, 1, 0, 1, 1, 1, 0, 1, 1 }; 				// OP: 3
 		System.out.println(getCount(arr));
 		
-		arr = new int[] { 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1 }; // OP: 3
+		arr = new int[] { 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1 }; // OP: 5
 		System.out.println(getCount(arr));
 	}
 

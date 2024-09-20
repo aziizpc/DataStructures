@@ -8,11 +8,11 @@ public class ARR_1_SecondLargestNumber {
 	}
 
 	public static int getSecondLargest(int[] arr) {
-		int largest = arr[0];
-		int secondLargest = Integer.MIN_VALUE;
+		int largest = arr[0];										// We assume the first element is LARGEST
+		int secondLargest = Integer.MIN_VALUE;						// And Integer.MIN_VALUE is SECONDLARGEST  
 
 		for (int i = 1; i < arr.length; i++) {
-			if (arr[i] > largest) {				// Case: Larger value than 'largest' comes
+			if (arr[i] > largest) {									// Case: Larger value than 'largest' comes
 				secondLargest = largest;
 				largest = arr[i];
 			} else if (arr[i] < largest && arr[i] > secondLargest) { // Case: Smaller value than 'largest' ..

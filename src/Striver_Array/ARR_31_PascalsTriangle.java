@@ -5,7 +5,7 @@ package Striver_Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ARR_30_PascalsTriangle {
+public class ARR_31_PascalsTriangle {
 	
 	public static List<List<Integer>> generate(int numRows) {
 
@@ -23,7 +23,7 @@ public class ARR_30_PascalsTriangle {
 
     public static List<Integer> getPascal(int rowIndex) {	// Main function
 
-        List<Integer> ls = new ArrayList<>();				// Output list
+        List<Integer> ls = new ArrayList<>();				// Output list (Row by row)
 
         long val = 1;										// Initiate val as long with value 1
 

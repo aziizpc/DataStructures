@@ -1,4 +1,4 @@
-// Self :)
+// left > 2 * right
 
 package Striver_Array;
 
@@ -6,16 +6,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ARR_31_MergeSort {
+public class ARR_34_ReversePairs {
 
-	public static void splitTheArray(int[] arr, int low, int high) {
+	public static int splitTheArray(int[] arr, int low, int high) {
+
+		int count = 0;
 
 		if (low == high)
-			return;
+			return count;
+
 		int mid = (low + high) / 2;
-		splitTheArray(arr, low, mid);
-		splitTheArray(arr, mid + 1, high);
+		count += splitTheArray(arr, low, mid);
+		count += splitTheArray(arr, mid + 1, high);
+		count += countPairs(arr, low, mid, high);
 		mergeAndSort(arr, low, mid, high);
+		
+		return count;
 	}
 
 	public static void mergeAndSort(int[] arr, int low, int mid, int high) {
@@ -50,15 +56,37 @@ public class ARR_31_MergeSort {
 		}
 	}
 
+	public static int countPairs(int[] arr, int low, int mid, int high) {
+
+		// [left block] .... [right block] --> for loop left block and check against the
+		// right block
+
+		int count = 0;
+
+		int right = mid + 1;
+
+		for (int i = low; i <= mid; i++) {
+			while (right <= high && arr[i] > (2 * arr[right])) {
+				right++;
+			}
+			count += (right - (mid + 1)); // Take count of all elements in right upto the current one
+		}
+
+		return count;
+	}
+
 	public static void main(String[] args) {
-		int arr[] = { 67, -20, 40, 1, 4, 0, 11, -1, 9, 8, 100 };
+
+		int[] arr = { 12, 19, 25, 40, 2, 6, 9 };
 
 		int low = 0;
 		int high = arr.length - 1;
 
-		splitTheArray(arr, low, high);
-		
+		int count = splitTheArray(arr, low, high);
+
 		System.out.println(Arrays.toString(arr));
+
+		System.out.println(count);
 
 	}
 

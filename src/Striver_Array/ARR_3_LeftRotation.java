@@ -14,7 +14,7 @@ public class ARR_3_LeftRotation {
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { 3, 7, 0, 1, -5, 9, 3 }; //O/P should be { 7, 0, 1, -5, 9, 3, 3 } 
+		int[] arr = { 3, 7, 0, 1, -5, 9, 3 }; 		//O/P should be { 7, 0, 1, -5, 9, 3, 3 } 
 		leftRotate(arr);
 		System.out.println(Arrays.toString(arr));
 	}

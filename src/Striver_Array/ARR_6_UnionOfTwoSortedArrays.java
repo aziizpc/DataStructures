@@ -22,14 +22,14 @@ public class ARR_6_UnionOfTwoSortedArrays {
 			j++;
 		}
 
-		while (i < arr1.length && j < arr2.length) {	// Add whichever is smaller by checking last element
+		while (i < arr1.length && j < arr2.length) {	// Break when at least one of them reaches end
 			if (arr1[i] <= arr2[j] && myList.get(myList.size() - 1) != arr1[i]) {
 				myList.add(arr1[i]);
 				i++;
 			} else if (arr2[j] < arr1[i] && myList.get(myList.size() - 1) != arr2[j]) {
 				myList.add(arr2[j]);
 				j++;
-			} else {									// Both are same => Just increment
+			} else {									// All other cases
 				i++;
 				j++;
 			}

@@ -20,7 +20,7 @@ public class STR_04_StringToInteger_Atoi {
 		// Step 1: Remove all the whitespace:		
 		while (current == ' ') {				// Start with 'while'
 			index++;
-			if (index == n) return 0;			// index = 0 +> Reached end of string => Return 0
+			if (index == n) return 0;			// index = n => Reached end of string => Return 0
 			current = arr[index];
 		}
 		

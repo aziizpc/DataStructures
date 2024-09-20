@@ -16,7 +16,7 @@ public class ARR_27_FourElementsSum {
 
 		for (int i = 0; i <= arr.length - 4; i++) { // NOTE!!!
 
-			if (i > 0 && arr[i] == arr[i - 1])
+			if (i != 0 && arr[i] == arr[i - 1])
 				continue;
 
 			for (int j = i + 1; j <= arr.length - 3; j++) { // NOTE!!!

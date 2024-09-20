@@ -5,11 +5,11 @@ import java.util.Arrays;
 public class ARR_2_RemoveDuplicatesInPlaceFromSortedArray {
 
 	public static int[] removeDuplicate(int[] arr) {
-		int i = 0;
-		for (int j = 1; j < arr.length; j++) {
-			if (arr[j] != arr[i]) {
-				arr[i + 1] = arr[j];
-				i++;
+		int i = 0;										// First point (i) at 0 (Means 0th element is correct)
+		for (int j = 1; j < arr.length; j++) {			// Loop j from 1 to end
+			if (arr[j] != arr[i]) {						// If an element other than that @ i is encountered
+				arr[i + 1] = arr[j];					// Set that element as (i+1)th element
+				i++;									// Now increment i
 			}
 		}
 		return arr;

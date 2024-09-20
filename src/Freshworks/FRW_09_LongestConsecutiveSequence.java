@@ -1,9 +1,11 @@
-package Striver_Array;
+// LC - 128
+
+package Freshworks;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class ARR_24_LongestConsecutiveSequence {
+public class FRW_09_LongestConsecutiveSequence {
 
 	public static int getLongestConSequence(int[] arr) {
 

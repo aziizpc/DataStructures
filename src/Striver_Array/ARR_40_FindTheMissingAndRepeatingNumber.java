@@ -2,7 +2,7 @@ package Striver_Array;
 
 import java.util.Arrays;
 
-public class ARR_39_FindTheMissingAndRepeatingNumber {
+public class ARR_40_FindTheMissingAndRepeatingNumber {
 	
 	public static int[] getMissingAndRepeatingUsingMath(int[] arr) {
 

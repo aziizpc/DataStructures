@@ -5,7 +5,7 @@ package Striver_Array;
 
 import java.util.Arrays;
 
-public class ARR_36_PlusOne {
+public class ARR_37_PlusOne {
 	
 	public static int[] getPlusOneArray(int[] digits) {
 		

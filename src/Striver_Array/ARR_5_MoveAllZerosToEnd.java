@@ -6,9 +6,9 @@ public class ARR_5_MoveAllZerosToEnd {
 
 	public static int[] moveZeros(int[] arr) {
 
-		int j = -2000; // Some -ve number
+		int j = -2000; 								// Some -ve number
 
-		for (int i = 0; i < arr.length; i++) { 		// Find the first zero and assign its pos to j and break
+		for (int i = 0; i < arr.length; i++) { 		// Find the first zero and save its position as j and break
 			if (arr[i] == 0) {
 				j = i;
 				break;

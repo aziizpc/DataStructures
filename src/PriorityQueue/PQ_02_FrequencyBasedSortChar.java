@@ -22,7 +22,13 @@ public class PQ_02_FrequencyBasedSortChar {
 			myMap.put(c, myMap.getOrDefault(c, 0) + 1);
 		}
 
-		PriorityQueue<Character> pq = new PriorityQueue<Character>((a, b) -> (myMap.get(b) - myMap.get(a)));
+		//PriorityQueue<Character> pq = new PriorityQueue<Character>((a, b) -> (myMap.get(b) - myMap.get(a)));
+		
+		PriorityQueue<Character> pq = new PriorityQueue<Character>((a, b) -> {	// Above is also correct
+			int freqA = myMap.get(a);
+			int freqB = myMap.get(b);
+			return Integer.compare(freqA, freqB);
+		});
 
 		pq.addAll(myMap.keySet());
 

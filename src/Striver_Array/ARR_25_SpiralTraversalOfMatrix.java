@@ -5,8 +5,8 @@ public class ARR_25_SpiralTraversalOfMatrix {
 	public static void printSpiral(int[][] arr) {
 
 		int top = 0;
-		int right = arr[0].length - 1; // NOTE (Column)
-		int bottom = arr.length - 1; // NOTE (Row)
+		int right = arr[0].length - 1; 					// NOTE (Column)
+		int bottom = arr.length - 1; 					// NOTE (Row)
 		int left = 0;
 
 		while (top <= bottom && left <= right) {

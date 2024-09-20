@@ -2,7 +2,7 @@ package Striver_Array;
 
 import java.util.Arrays;
 
-public class ARR_40_SetMatrixZeroes {
+public class ARR_41_SetMatrixZeroes {
 
 	public static int[][] setZeroes(int[][] matrix) {
 

@@ -10,7 +10,7 @@ public class STR_10_CompareVersionNumbers {
         String[] arr1 = version1.split("\\.");									// Split the string (NOTE)
         String[] arr2 = version2.split("\\.");
 
-        int length = arr1.length >= arr2.length ? arr1.length : arr2.length;	// Get the mac length of two
+        int length = arr1.length >= arr2.length ? arr1.length : arr2.length;	// Get the max length of two
 
         for (int i = 0 ; i < length ; i++){										// For loop the max length
             Integer v1 = i < arr1.length ? Integer.parseInt(arr1[i]) : 0;  // Convert if exists, else 0 (Integer)

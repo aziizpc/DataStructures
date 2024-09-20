@@ -14,7 +14,7 @@ public class STQ_2_QueueImplementationUsingArrays {
 		if (count == n) {
 			return;
 		}
-		arr[rear % n] = x;			// Not rear % n (Circular manner)
+		arr[rear % n] = x;			// Note rear % n (Circular manner)
 		count++;
 		rear++;
 	}

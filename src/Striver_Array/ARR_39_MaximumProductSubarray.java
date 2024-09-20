@@ -1,6 +1,6 @@
 package Striver_Array;
 
-public class ARR_38_MaximumProductSubarray {
+public class ARR_39_MaximumProductSubarray {
 
 	public static int maxProduct(int[] nums) {
 

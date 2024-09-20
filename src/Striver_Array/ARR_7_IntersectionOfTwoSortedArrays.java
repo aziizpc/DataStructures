@@ -14,7 +14,7 @@ public class ARR_7_IntersectionOfTwoSortedArrays {
 
 		List<Integer> myList = new ArrayList<Integer>();
 
-		while (i < arr1.length && j < arr2.length) {	// while with & condition
+		while (i < arr1.length && j < arr2.length) {	// Break when at least one of them reaches end
 			if (arr1[i] < arr2[j]) {					// First is small => Increment i
 				i++;
 			} else if (arr1[i] > arr2[j]) {				// Second is small => Increment j

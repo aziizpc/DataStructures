@@ -14,7 +14,7 @@ public class SL_02_ProductOfElementsAtOtherIndices {
 	        result[i] = result[i - 1] * nums[i - 1];
 	    }
 	    
-	    System.out.println(Arrays.toString(result));
+	    // System.out.println(Arrays.toString(result));
 
 	    // Second pass: calculate products of all elements to the right
 	    int rightProduct = 1; 			// Initially, there's nothing to the right of the last element
