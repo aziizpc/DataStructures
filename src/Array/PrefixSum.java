@@ -22,7 +22,7 @@ public class PrefixSum {
 		
 		System.out.println(Arrays.toString(prefixSum));
 		
-		// Get of sum of elements from 02 index to 04 index:
+		// Get sum of elements from 02 index to 04 index:
 		
 		int sum = prefixSum[4] - prefixSum[1];
 		System.out.println("\nSum: " + sum);

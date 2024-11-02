@@ -12,7 +12,7 @@ public class DeleteAnElementFromArray {
 		List<Integer> myList = new ArrayList<>(Arrays.asList(myArray));
 		myList.remove(0);
 
-		myArray = myList.toArray(myArray); // Updated myArray
+		myArray = myList.toArray(new Integer[0]); // Updated myArray
 
 		return Arrays.toString(myArray); // null values in o/p as Array size is fixed
 	}

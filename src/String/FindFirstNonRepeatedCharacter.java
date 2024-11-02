@@ -1,8 +1,7 @@
 package String;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class FindFirstNonRepeatedCharacter {
 
@@ -11,7 +10,7 @@ public class FindFirstNonRepeatedCharacter {
 		String s = "aabbdef";
 		
 		System.out.println("Map:"); 
-		Map<Character, Integer> myMap = new HashMap<>();
+		Map<Character, Integer> myMap = new LinkedHashMap<>();	// Linked
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
 			myMap.put(c, myMap.getOrDefault(c, 0) + 1);

@@ -27,7 +27,7 @@ public class LL_21_FindTheLengthOfTheLoopInLL {
 		int count = 1;									// Default size: 1
 		
 		fast = fast.next;								// Move fast one step forward 
-														//so that we can work with the while loop next
+														// so that we can work with the while loop next
 		
 		while (slow != fast) {							// Condition	
 			count++;							

@@ -1,7 +1,7 @@
 // LC - 146
 // There is another one -> LFU Cache (It's somewhat hard to implement)
 
-package Striver_LinkedList;
+package Striver_DoublyLinkedList;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +18,7 @@ class LRUNode{
 	}
 }
 
-public class LL_31_LRUCache {
+public class DLL_14_LRUCache {
 	
 	LRUNode head;									// Declared head node
 	LRUNode tail;									// Declared head node (We insert new nodes just after head)
@@ -28,7 +28,7 @@ public class LL_31_LRUCache {
 	
 	int capacity;									// Needed for LRU Cache as it has a max capacity
 	
-	public LL_31_LRUCache(int capacity) {			// LRU Cache will have a max capacity.
+	public DLL_14_LRUCache(int capacity) {			// LRU Cache will have a max capacity.
 		head = new LRUNode(0, 0);					// Init head
 		tail = new LRUNode(0, 0);					// Init tail
 		mp = new HashMap<Integer, LRUNode>();		// Init the Map

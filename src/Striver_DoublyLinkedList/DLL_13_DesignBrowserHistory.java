@@ -1,4 +1,4 @@
-package Striver_LinkedList;
+package Striver_DoublyLinkedList;
 
 class BrowserNode {										// Created a class with the following class variables
     String data;
@@ -10,11 +10,11 @@ class BrowserNode {										// Created a class with the following class variabl
     }
 }
 
-public class LL_30_DesignBrowserHistory {				// Master class
+public class DLL_13_DesignBrowserHistory {				// Master class
 	
 	BrowserNode currentPage;							// Created a new node
 
-    public LL_30_DesignBrowserHistory(String homepage) {// Constructor
+    public DLL_13_DesignBrowserHistory(String homepage) {// Constructor
         currentPage = new BrowserNode (homepage);		// Homepage is loaded and saved as currentPage
     }
     

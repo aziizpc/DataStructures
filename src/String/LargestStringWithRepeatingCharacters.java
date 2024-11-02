@@ -2,44 +2,43 @@ package String;
 
 public class LargestStringWithRepeatingCharacters {
 
-	public static void main(String[] args) {
-		
-		int end = 0;
+    public static void main(String[] args) {
 
-		String s = "babdfghccddddddddddbdarfwesacd";
+        // Sample input
+        String s = "babdfghccddddddddddbdarfwesacd";
 
-		int ans = 1, temp = 1;
+        if (s.isEmpty()) {
+            System.out.println("0 No repeating characters");
+            return;
+        }
 
-		for (int i = 1; i < s.length(); i++) {
+        int maxLength = 1, tempLength = 1, end = 0;
 
-			char c = s.charAt(i);
+        // Iterate through the string to find the longest repeating character sequence
+        for (int i = 1; i < s.length(); i++) {
+            char current = s.charAt(i);
+            char previous = s.charAt(i - 1);
 
-			char d = s.charAt(i - 1);
+            if (current == previous) {
+                tempLength++;
+                end = i;
+            } else {
+                // Check if we have found a longer repeating sequence
+                if (tempLength > maxLength) {
+                    maxLength = tempLength;
+                }
+                tempLength = 1;
+            }
+        }
 
-			if (c == d) {
-				
-				end = i;
+        // Final check after loop in case the longest sequence is at the end
+        if (tempLength > maxLength) {
+            maxLength = tempLength;
+        }
 
-				temp++;
-
-			}
-
-			else {
-
-				ans = Math.max(ans, temp);
-
-				temp = 1;
-
-			}
-
-		}
-
-		System.out.println(ans + " " + end);
-		
-		String output = s.substring(end - ans + 1, end + 1);
-		
-		System.out.println(output);
-
-	}
-
+        // Calculate and print the longest repeating character substring
+        String output = s.substring(end - maxLength + 1, end + 1);
+        System.out.println("Length of largest repeating substring: " + maxLength);
+        System.out.println("Largest repeating substring: " + output);
+    }
 }

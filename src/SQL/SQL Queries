@@ -1,0 +1,100 @@
+-- 1. Retrieve all records from a table.
+SELECT * FROM Employees;
+
+-- 2. Fetch specific columns from a table.
+SELECT FirstName, LastName, Email FROM Employees;
+
+-- 3. Find employees with a specific first name.
+SELECT * FROM Employees WHERE FirstName = 'John';
+
+-- 4. Retrieve employees with a condition on multiple fields.
+SELECT * FROM Employees WHERE Department = 'Sales' AND Salary > 50000;
+
+-- 5. Find emails ending with a specific domain.
+SELECT * FROM Customers WHERE Email LIKE '%@gmail.com';
+
+-- 6. Count total number of orders, total sales, and average order value.
+SELECT COUNT(*) AS TotalOrders, SUM(OrderAmount) AS TotalSales, AVG(OrderAmount) AS AverageOrderValue FROM Orders;
+
+-- 7. Group employees by department and count them.
+SELECT Department, COUNT(*) AS NumberOfEmployees FROM Employees GROUP BY Department;
+
+-- 8. Get departments having more than 10 employees.
+SELECT Department, COUNT(*) AS NumberOfEmployees FROM Employees GROUP BY Department HAVING COUNT(*) > 10;
+
+-- 9. Perform an inner join to combine two tables.
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate 
+FROM Orders 
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+
+-- 10. Perform a left join to include all employees and their departments (even if no department is assigned).
+SELECT E.FirstName, E.LastName, D.DepartmentName 
+FROM Employees E 
+LEFT JOIN Departments D ON E.DepartmentID = D.DepartmentID;
+
+-- 11. Perform a right join to include all departments and their employees (even if no employee is assigned).
+SELECT D.DepartmentName, E.FirstName, E.LastName 
+FROM Employees E 
+RIGHT JOIN Departments D ON E.DepartmentID = D.DepartmentID;
+
+-- 12. Perform a full outer join to get all employees and departments, even if no match exists.
+SELECT E.FirstName, E.LastName, D.DepartmentName 
+FROM Employees E 
+FULL OUTER JOIN Departments D ON E.DepartmentID = D.DepartmentID;
+
+-- 13. Perform a cross join to get all combinations of employees and projects.
+SELECT E.FirstName, E.LastName, P.ProjectName 
+FROM Employees E 
+CROSS JOIN Projects P;
+
+-- 14. Find employees earning more than the average salary.
+SELECT FirstName, LastName, Salary FROM Employees WHERE Salary > (SELECT AVG(Salary) FROM Employees);
+
+-- 15. List employees ranked by salary within their department.
+SELECT FirstName, LastName, Department, Salary, ROW_NUMBER() OVER (PARTITION BY Department ORDER BY Salary DESC) AS RowNum 
+FROM Employees;
+
+-- 16. Combine lists of current and past employees with duplicates.
+SELECT CustomerName, Email FROM ActiveCustomers 
+UNION ALL 
+SELECT CustomerName, Email FROM FormerCustomers;
+
+-- 17. Find customers who have placed at least one order.
+SELECT CustomerName FROM Customers C 
+WHERE EXISTS (SELECT 1 FROM Orders O WHERE O.CustomerID = C.CustomerID);
+
+-- 18. Find employees who do not have a manager.
+SELECT FirstName, LastName FROM Employees WHERE ManagerID IS NULL;
+
+-- 19. List products that have never been sold.
+SELECT ProductName FROM Products 
+WHERE ProductID NOT IN (SELECT DISTINCT ProductID FROM Sales);
+
+-- 20. Retrieve the top 5 highest-paid employees.
+SELECT TOP 5 FirstName, LastName, Salary 
+FROM Employees 
+ORDER BY Salary DESC;
+
+-- 21. Fetch the top 10 orders by amount.
+SELECT TOP 10 OrderID, OrderAmount 
+FROM Orders 
+ORDER BY OrderAmount DESC;
+
+-- 22. Get the top 3 most recent employees.
+SELECT TOP 3 FirstName, LastName, HireDate 
+FROM Employees 
+ORDER BY HireDate DESC;
+
+-- 23. Retrieve the top 2 departments with the highest number of employees.
+SELECT TOP 2 Department, COUNT(*) AS EmployeeCount 
+FROM Employees 
+GROUP BY Department 
+ORDER BY COUNT(*) DESC;
+
+-- 24. Find the top 1 employee in each department based on salary.
+SELECT FirstName, LastName, Salary, Department
+FROM Employees E1
+WHERE Salary = (SELECT TOP 1 Salary 
+                FROM Employees E2 
+                WHERE E2.Department = E1.Department 
+                ORDER BY Salary DESC);

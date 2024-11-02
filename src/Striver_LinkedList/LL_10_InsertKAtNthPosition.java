@@ -3,41 +3,42 @@
 package Striver_LinkedList;
 
 public class LL_10_InsertKAtNthPosition {
-	
+
 	private static Node convertArrayToLL(int[] arr) {
 
-		Node head = new Node(arr[0]); 			// The Array 0th index would be the head
-		Node mover = head; 						// Just declare a mover. Currently it points to head.
+		Node head = new Node(arr[0]);
+		Node mover = head;
 
-		for (int i = 1; i < arr.length; i++) { 	// Start from the 1st index
-			Node temp = new Node(arr[i]); 		// Create temp nodes based on index
-			mover.next = temp; 					// Connect the mover to temp :)
-			mover = temp; 						// Now, the mover is @ temp.
+		for (int i = 1; i < arr.length; i++) {
+			Node temp = new Node(arr[i]);
+			mover.next = temp;
+			mover = temp;
 		}
 		return head;
 	}
-	
-	private static Node insertAtN(Node head, int k, int n) {
-		
-		Node temp = head;
-		
-		if (n == 1) {
+
+	private static Node insertAtN(Node head, int k, int n) {	// Self
+
+		if (n == 1) {						// Case: Insert as head
 			return new Node(k, head);
 		}
-		
-		int pos = 0;
-		while (temp != null) {
-			pos++;
-			if (pos == n - 1) {
-				Node y = new Node(k);
-				y.next = temp.next;
-				temp.next = y;				
+
+		int count = 0;
+
+		Node temp = head;
+
+		while (temp != null) {				// Case: All others
+			count++;
+			if (count == (n - 1)) {
+				Node newNode = new Node(k);
+				newNode.next = temp.next;
+				temp.next = newNode;
+				return head;
 			}
 			temp = temp.next;
 		}
-		
+
 		return head;
-		
 	}
 
 	public static void main(String[] args) {
@@ -45,12 +46,12 @@ public class LL_10_InsertKAtNthPosition {
 		int[] arr = { 2, 5, 6, 8, 9 };
 
 		Node head = convertArrayToLL(arr);
-		
+
 		int k = 100;
 		int n = 4;
-		
+
 		head = insertAtN(head, k, n);
-		
+
 		Node temp = head;
 		while (temp != null) {
 			System.out.println(temp.data);
