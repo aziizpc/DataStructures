@@ -1,6 +1,6 @@
 // You can use any number any number of times
 
-package Striver_Recursion;
+package Test;
 
 import java.util.ArrayList;
 import java.util.List;

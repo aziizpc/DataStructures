@@ -1,10 +1,10 @@
 // LC - 1190
 
-package MyLC_String;
+package SDETSheet;
 
 import java.util.Stack;
 
-public class STR_19_ReverseSubstringsBetweenParentheses {
+public class SDET_038_ReverseSubstringsBetweenParentheses {
 	
 	public static String reverseParentheses(String s) {
 

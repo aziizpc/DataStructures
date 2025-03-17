@@ -5,34 +5,35 @@ import java.util.Map;
 
 public class ARR_26_SubarraySumEqualsKCount {
 
-	public static int getSubArrayCount(int[] arr, int k) {
+	public static int getSubArrayCount(int[] nums, int k) {
 
 		int count = 0;
+		int n = nums.length;
 		int sum = 0;
 
-		Map<Integer, Integer> myMap = new HashMap<Integer, Integer>();
+		Map<Integer, Integer> hm = new HashMap<Integer, Integer>();
 
-		for (int i = 0; i < arr.length; i++) {
-			sum += arr[i];									// Add the current value to 'sum'.
+		hm.put(0, 1);
 
-			if (sum == k)									// sum = k ==> Success ==> Increment the counter 
-				count++;
+		for (int i = 0; i < n; i++) {
+			int val = nums[i];
+			sum += val;
 
-			int diff = sum - k;								// Now, find -> diff = (sum - k)
-			if (myMap.containsKey(diff)) {					// Check if this diff is present in the hm
-				count += myMap.get(diff);					// If yes -> Get the count of that sum (hm value)
+			if (hm.containsKey(sum - k)) {
+				count += hm.get(sum - k);
 			}
 
-			myMap.put(sum, myMap.getOrDefault(sum, 0) + 1);	// The 'sum' is inserted to hm. Not arr[i].
+			hm.put(sum, hm.getOrDefault(sum, 0) + 1);
 		}
-		
+
 		return count;
+
 	}
 
 	public static void main(String[] args) {
 		int[] arr = { 1, 2, 3, -3, 1, 1, 1, 4, 2, -3 };
 		int k = 3;
-		
+
 		System.out.println(getSubArrayCount(arr, k));
 
 	}

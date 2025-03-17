@@ -21,7 +21,7 @@ class LRUNode{
 public class DLL_14_LRUCache {
 	
 	LRUNode head;									// Declared head node
-	LRUNode tail;									// Declared head node (We insert new nodes just after head)
+	LRUNode tail;									// Declared tail node (We insert new nodes just after head)
 													// Least recently used will be just before tail
 	
 	Map<Integer, LRUNode> mp;						// Map is needed for this approach
@@ -75,9 +75,5 @@ public class DLL_14_LRUCache {
 		node.next.prev = node.prev;
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+	
 }
